@@ -14,7 +14,7 @@ This project, titled **hydceff**, is a C-based program with several functions fo
 
 ---
 
-<a id="installation"> ## Installation </a>
+## Installation <a id="installation"></a>
 
 To get started, ensure you have the following prerequisites installed:
 
