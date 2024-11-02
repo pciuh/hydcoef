@@ -39,7 +39,13 @@ To compile the program:
 make all
 ```
 
-This will generate an executable named `calhyd`.
+This will generate an executable named `calhyd`. Further to calculate added mass and damping coefficients you need to create comma separated `hull.csv` including sectional ordinate `x` and section radius `R`. All these must be dimesionless with respect to ship length `L`.
+
+Nest the `conf.csv` file including ship length `L` and min/max value of wave frequency is demanded. For preparation of `csv` files please look into example `hull/hull.csv` and `conf.csv`. Then run program from command line:
+
+```bash
+calhyd hull/hull.csv conf.csv
+```
 
 ## Makefile Commands
 
