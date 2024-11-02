@@ -1,6 +1,6 @@
 # hydcoeff
 
-This project, titled **hydceff**, is a C-based program with several functions for hydrodynamic calculations. The Makefile automates the compilation of C files and provides commands to manage the build process.
+This project, titled **hydceff**, is a C-based program with several functions for hydrodynamic calculations. The Makefile automates the compilation of C files and provides commands to manage the build process. The computations are carried out basing on 2D added mass coefficients estiamted from theoretical computations by readings from graph included in [1]. Further basing on slender body theory the 2D coefficients are integrated over the ship length according to Salvesen method [1].
 
 ## Table of Contents
 
@@ -10,6 +10,7 @@ This project, titled **hydceff**, is a C-based program with several functions fo
 - [Project Structure](#project-structure)
 - [Contributing](#contributing)
 - [License](#license)
+- [Reference](#reference)
 
 ---
 
@@ -41,7 +42,7 @@ make all
 
 This will generate an executable named `calhyd`. Further to calculate added mass and damping coefficients you need to create comma separated `hull.csv` including sectional ordinate `x` and section radius `R`. All these must be dimesionless with respect to ship length `L`.
 
-Nest the `conf.csv` file including ship length `L` and min/max value of wave frequency is demanded. For preparation of `csv` files please look into example `hull/hull.csv` and `conf.csv`. Then run program from command line:
+Next the `conf.csv` file including ship length `L` and min/max value of wave frequency `wMin`, `wMax` are demanded. For preparation of `csv` files please look into example `hull/hull.csv` and `conf.csv`. Then run program from command line:
 
 ```bash
 calhyd hull/hull.csv conf.csv
@@ -96,3 +97,17 @@ Contributions are welcome! Please follow these steps:
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
+## References
+
+```bibtex
+@book{faltinsen1993sea,
+  title={Sea Loads on Ships and Offshore Structures},
+  author={Faltinsen, O.},
+  isbn={9780521458702},
+  lccn={90043346},
+  series={Cambridge Ocean Technology Series},
+  url={https://books.google.pl/books?id=qZq4Rs2DZXoC},
+  year={1993},
+  publisher={Cambridge University Press}
+}
+```
