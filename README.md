@@ -1,6 +1,6 @@
 # hydcoeff
 
-This project, titled **hydceff**, is a C-based program with several functions for hydrodynamic calculations. The Makefile automates the compilation of C files and provides commands to manage the build process. The computations are carried out basing on 2D added mass coefficients estiamted from theoretical computations by readings from graph included in [1](#1). Further basing on slender body theory the 2D coefficients are integrated over the ship length according to Salvesen method [1](#1).
+This project, titled **hydceff**, is a C-based program with several functions for hydrodynamic calculations. The Makefile automates the compilation of C files and provides commands to manage the build process. The computations are carried out basing on 2D added mass coefficients estiamted from theoretical computations by readings from graph included in [[1](#1)]. Further basing on slender body theory the 2D coefficients are integrated over the ship length according to Salvesen method [1](#1).
 
 ## Table of Contents
 
