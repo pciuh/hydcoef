@@ -27,4 +27,66 @@ Clone the project from GitHub to your local machine:
 ```bash
 git clone https://github.com/pciuh/hydcoef.git
 cd hydcoef
-make
+```
+
+## Usage
+
+The project provides a Makefile to compile the source code into an executable. Once compiled, the program can be run from the command line.
+
+To compile the program:
+
+```bash
+make all
+```
+
+This will generate an executable named `calhyd`.
+
+## Makefile Commands
+
+Below is a list of commands available in the Makefile:
+
+| Command         | Description                                                                                       |
+|-----------------|---------------------------------------------------------------------------------------------------|
+| `make all`      | Compiles the project, producing the `calhyd` executable.                                          |
+| `make calhyd`   | Specifically compiles and links all object files to create the `calhyd` executable.               |
+| `make clean`    | Removes all object files (`*.o`) to clean the build environment.                                  |
+
+### Compilation Details
+
+- **Compiler**: `gcc`
+- **Flags**: `-g3 -Wall -ggdb` - These flags enable debug symbols, all warnings, and gdb debugging.
+- **Source Files**:
+  - `main.c`
+  - `adm_approx.c`
+  - `dam_approx.c`
+- **Header File**:
+  - `func.h`
+
+The object files generated during compilation are:
+
+- `main.o`
+- `adm_approx.o`
+- `dam_approx.o`
+
+## Project Structure
+
+```
+calhyd/
+├── main.c            # Main source file
+├── adm_approx.c      # Source file for adm_approx calculations
+├── dam_approx.c      # Source file for dam_approx calculations
+└── func.h            # Header file containing function declarations
+```
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature.
+3. Submit a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
