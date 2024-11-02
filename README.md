@@ -95,7 +95,7 @@ Contributions are welcome! Please follow these steps:
 
 ## License <a id="license"></a>
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/pciuh/hydcoef/blob/main/LICENSE) file for more details.
 
 ## References
 
