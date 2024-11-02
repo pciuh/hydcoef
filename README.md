@@ -25,5 +25,6 @@ To get started, ensure you have the following prerequisites installed:
 Clone the project from GitHub to your local machine:
 
 ```bash
-git clone https://github.com/yourusername/calhyd.git
-cd calhyd
+git clone https://github.com/pciuh/hydcoef.git
+cd hydcoef
+make
