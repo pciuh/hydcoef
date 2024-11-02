@@ -113,6 +113,7 @@ int main (int argc, char *argv[])
         }
     }
 
+    // print absolute values to screen every 10th frequency
     printf("\nAdded Mass:\n");
     for(i=0;i<NFREQ;i+=10){
         printf("%8.2f%12.1e%12.1e\n",w[i],A33x[i],A55x[i]);
