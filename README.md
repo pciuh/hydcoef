@@ -99,7 +99,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ## References
 
-<a id="1">[1]</a>
+<a id="1">[1]</a>Faltinsen, O., Sea Loads on Ships and Offshore Structures
 ```bibtex
 @book{faltinsen1993sea,
   title={Sea Loads on Ships and Offshore Structures},
