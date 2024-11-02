@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 #include "func.h"
 
 #define NFRA 99   // maximum number of hull sections
@@ -8,35 +11,59 @@ const float RHO = 1025.9; // kg/m3, standard sea water density
 
 int main (int argc, char *argv[])
 {
-    int i,j;
-    char str[66];
+    int i,j,c;
     float x[NFRA], R[NFRA];
+    float L,wMin,wMax;
+    char str[66];
     FILE *infile, *outfile;
 
+    if(argc<3){
+        printf("Missing hull.csv and conf.csv!\n");
+        exit(8);
+    }
     printf("%s\n",argv[1]);
-    infile = fopen(argv[1],"rb");
+    
+    // Reading hull file
+    infile = fopen(argv[1],"r");
+    c=0;
     i=0;
-    float L = 100.0;
-    int c=0;
+    char* STR = "%f,%f";
     while(c != EOF)
     {
         fseek(infile,-1,SEEK_CUR);
         fgets(str,sizeof(str),infile);
         if(i>0){
-            sscanf(str,"%f,%f",&x[i-1],&R[i-1]);
+            sscanf(str,STR,&x[i-1],&R[i-1]);
+        }
+        i++;
+        c = fgetc(infile);
+    }
+    fclose(infile);
+    int n = i-1;
+
+    if (n>NFRA) {
+        printf("Too many sections! Limit is 99\n");
+        exit(8);
+    }
+
+    // reading config file
+    infile = fopen(argv[2],"r");
+    STR = "%f,%f,%f";
+    i=0;
+    c=0;
+
+    while(c != EOF)
+    {
+        fseek(infile,-1,SEEK_CUR);
+        fgets(str,sizeof(str),infile);
+        if(i>0){
+            sscanf(str,STR,&L,&wMin,&wMax);
         }
         i++;
         c = fgetc(infile);
     }
     fclose(infile);
     
-
-    int n = i-1;
-    if (n>NFRA) {
-        printf("Too many sections! Limit is 99\n");
-        exit(8);
-    }
-
     printf("\nSection Area:\n");
     for(i=0;i<n;i++){
         x[i] = x[i]*L;
@@ -60,10 +87,7 @@ int main (int argc, char *argv[])
     printf("\n LCB:%12.3f\n",LCB);
     printf("MASS:%12.1f\n",W);
 
-    float wMin=0.1;
-    float wMax=2.0;
-    float w[NFREQ];
-       
+    float w[NFREQ];       
     float dw = (wMax-wMin)/NFREQ;
     
     float ww = wMin;
@@ -99,6 +123,7 @@ int main (int argc, char *argv[])
         printf("%8.2f%12.1e%12.1e\n",w[i],B33x[i],B55x[i]);
     }
 
+    // save results to file
     outfile = fopen("output/hyd_coef.csv","w");
     fprintf(outfile,"%s,%s,%s,%s,%s\n","OMEGA","A33","A55","B33","B55");
     for(i=0;i<NFREQ;i++){
