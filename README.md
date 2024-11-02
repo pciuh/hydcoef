@@ -30,7 +30,7 @@ git clone https://github.com/pciuh/hydcoef.git
 cd hydcoef
 ```
 
-## Usage
+## Usage <a id="usage"></a>
 
 The project provides a Makefile to compile the source code into an executable. Once compiled, the program can be run from the command line.
 
@@ -48,7 +48,7 @@ Next the `conf.csv` file including ship length `L` and min/max value of wave fre
 calhyd hull/hull.csv conf.csv
 ```
 
-## Makefile Commands
+## Makefile Commands <a id="makefile-commands"></a>
 
 Below is a list of commands available in the Makefile:
 
@@ -58,7 +58,7 @@ Below is a list of commands available in the Makefile:
 | `make calhyd`   | Specifically compiles and links all object files to create the `calhyd` executable.               |
 | `make clean`    | Removes all object files (`*.o`) to clean the build environment.                                  |
 
-### Compilation Details
+### Compilation Details <a id="project-structure"></a>
 
 - **Compiler**: `gcc`
 - **Flags**: `-g3 -Wall -ggdb` - These flags enable debug symbols, all warnings, and gdb debugging.
@@ -85,7 +85,7 @@ calhyd/
 └── func.h            # Header file containing function declarations
 ```
 
-## Contributing
+## Contributing <a id="contributing"></a>
 
 Contributions are welcome! Please follow these steps:
 
@@ -93,7 +93,7 @@ Contributions are welcome! Please follow these steps:
 2. Create a new branch for your feature.
 3. Submit a pull request.
 
-## License
+## License <a id="license"></a>
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
 
