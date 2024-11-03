@@ -48,6 +48,8 @@ Next the `conf.csv` file including ship length `L` and min/max value of wave fre
 calhyd hull/hull.csv conf.csv
 ```
 
+Added mass and damping coefficients are normalized by calculated ship displacement and pitch moment of inertia. Rsults are stored into the `hull/` folder. Name of results file are e.g.: `hull-hc.csv`.
+
 ## Makefile Commands <a id="makefile-commands"></a>
 
 Below is a list of commands available in the Makefile:
