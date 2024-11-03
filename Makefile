@@ -4,8 +4,6 @@
 #
 #      dAnzig, 2024/11/02
 CC=gcc
-CPP=g++
-FDIR=functions/
 
 CFLAGS=-g3 -Wall -ggdb
 
