@@ -81,8 +81,7 @@ The object files generated during compilation are:
 
 ```
 calhyd/
-├── hull              # Directory containing hull files
-├── output            # Directory containing computation results
+├── hull              # Directory containing hull files and results
 ├── main.c            # Main source file
 ├── adm_approx.c      # Source file for adm_approx calculations
 ├── dam_approx.c      # Source file for dam_approx calculations
