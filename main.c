@@ -69,6 +69,7 @@ int main (int argc, char *argv[])
     // basic hydrostatic calculations
     struct Hydro hyd = hydrostatic(n,L,x,R);
 
+    // print hydrostatics to screen
     printf("\n LCB [m]:%12.3f\n",hyd.LCB);
     printf("VOL [m3]:%12.1f\n",hyd.A);
     printf("MASS [t]:%12.1f\n",hyd.W*1e-3);
@@ -87,6 +88,7 @@ int main (int argc, char *argv[])
 
     int nw = i-1;
 
+    // calculate added mass and damping
     struct Hcoef rad = radiation(nw,n,w,x,R,hyd);
 
     // print absolute values to screen every 10th frequency
