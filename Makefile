@@ -5,7 +5,7 @@
 #      dAnzig, 2024/11/02
 CC=gcc
 
-CFLAGS=-g3 -Wall -ggdb
+CFLAGS=-g1 -Wall -ggdb
 
 OBJ = main.o adm_approx.o dam_approx.o
 

@@ -10,7 +10,7 @@ This project, titled **hydceff**, is a C-based program with several functions fo
 - [Project Structure](#project-structure)
 - [Contributing](#contributing)
 - [License](#license)
-- [Reference](#reference)
+- [References](#reference)
 
 ---
 
@@ -101,7 +101,7 @@ Contributions are welcome! Please follow these steps:
 
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/pciuh/hydcoef/blob/main/LICENSE) file for more details.
 
-## References
+## References <a id="reference"></a>
 
 <a id="1">[1]</a> Faltinsen, O., Sea Loads on Ships and Offshore Structures
 ```bibtex
