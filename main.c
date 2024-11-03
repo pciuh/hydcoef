@@ -6,8 +6,6 @@
 #define NFRA 99   // maximum number of hull sections
 #define NFREQ 99  // number of frequencies
 
-const float G = 9.80665;  // m/s2, standard gravity
-const float RHO = 1025.9; // kg/m3, standard sea water density
 
 int main (int argc, char *argv[])
 {
@@ -15,6 +13,10 @@ int main (int argc, char *argv[])
     float x[NFRA], R[NFRA];
     float L,wMin,wMax;
     char str[66];
+    
+    float RHO = 1025.9; // kg/m3, standard sea water density
+
+
     FILE *infile, *outfile;
 
     if(argc<3){
@@ -68,7 +70,7 @@ int main (int argc, char *argv[])
     for(i=0;i<n;i++){
         x[i] = x[i]*L;
         R[i] = R[i]*L;
-        printf("%8.1f%8.2f\n",x[i],2.0*asin(1)*pow(R[i],2));
+        printf("%8.1f%8.2f\n",x[i],asin(1)*pow(R[i],2));
     }
 
     // basic hydrostatic calculations
@@ -76,8 +78,8 @@ int main (int argc, char *argv[])
     float xA=0;
     for(i=0;i<n-1;i++) {
         float dx = (x[i+1]-x[i]);
-        xA += 2.0*x[i]*asin(1)*pow(R[i],2)*dx;
-         A += 2.0*asin(1)*pow(R[i],2)*dx;
+        xA += x[i]*asin(1)*pow(R[i],2)*dx;
+         A += asin(1)*pow(R[i],2)*dx;
     }
     
     float LCB = xA/A; // longitudinal center of buoyancy for pitch computations
