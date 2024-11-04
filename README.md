@@ -92,7 +92,7 @@ calhyd/
 ├── adm_approx.c      # Source file for added mass calculations
 ├── dam_approx.c      # Source file for damping calculations
 ├── hydro.c           # Source file for hydrostatic calculations
-├── in_out_file.c      # Source file for input/output flies operations
+├── in_out_file.c     # Source file for input/output flies operations
 ├── print_coef.c      # Source file for printing some results to screen
 └── func.h            # Header file containing function declarations
 ```
