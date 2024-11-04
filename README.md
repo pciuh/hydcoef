@@ -83,6 +83,13 @@ The object files generated during compilation are:
 - `in_out_files.o`
 - `print_coef.o`
 
+In case of troubles with compilation it is recomemended to use `Dockerfile` then build and run image by command:
+```bash
+docker build -t calhyd-gcc-app .
+docker run -it --rm --name calhyd-running calhyd-gcc-app
+```
+Above commands should be executed in folder `hydcoef`.
+
 ## Project Structure
 
 ```
