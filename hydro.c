@@ -8,13 +8,22 @@
 
 #include "func.h"
 
-struct Hydro hydrostatic(int n, float L, float x[], float R[]){
+struct Hydro Hydrostatic(int n, float L, float x[], float R[]){
 
     const float RHO = 1025.9; // water density [kg/m3]
     
     float A=0;
     float xA=0;
     float Rmax=-1e4;
+
+    printf("\nSection Area:\n\n");
+    printf("%8s%8s%8s\n","X","R","A");
+    printf("%8s%8s%8s\n\n","m","m","m2");
+    for(int i=0;i<n;i++){
+        x[i] = x[i]*L;
+        R[i] = R[i]*L;
+        printf("%8.1f%8.2f%8.2f\n",x[i],R[i],asin(1)*pow(R[i],2));
+    }
 
     for(int i=0;i<n-1;i++) {
         float dx = (x[i+1]-x[i]);
@@ -30,12 +39,19 @@ struct Hydro hydrostatic(int n, float L, float x[], float R[]){
     float I55 = W*pow(0.25*L,2); // pitch moment of inertia (assumed 0.25L radii of gyratio)
     float CB = A/L/2/pow(Rmax,2); // block coefficient
 
+    // print hydrostatics to screen
+    printf("\n LCB [m]:%12.3f\n",LCB);
+    printf("VOL [m3]:%12.1f\n",A);
+    printf("MASS [t]:%12.1f\n",W*1e-3);
+    printf("  CB [-]:%12.3f\n",CB);
+
+
     struct Hydro r = {A, LCB, W, I55, CB};
     
     return r;
 }
 
-struct Hcoef radiation(int nw, int n,float w[], float x[], float R[], struct Hydro hyd){
+struct Hcoef Radiation(int nw, int n,float w[], float x[], float R[], struct Hydro hyd){
 
     // initialize output structure
     struct Hcoef r = {{0},{0},{0},{0}};
@@ -55,4 +71,16 @@ struct Hcoef radiation(int nw, int n,float w[], float x[], float R[], struct Hyd
     }
        
     return r;
+}
+
+void CalcWaveFreq(float wMin, float wMax, int NoWaveFrequencies, float *w){
+    //calculate wave frequencies        
+    //static float w[NoWaveFrequencies];
+    float dw = (wMax-wMin)/(NoWaveFrequencies-1);
+    
+    float ww = wMin;
+    for(int i=0;ww<wMax;i++){
+        w[i] = ww;
+        ww += dw;
+    }
 }

@@ -7,7 +7,7 @@ CC=gcc
 
 CFLAGS=-g1 -Wall -ggdb
 
-OBJ = main.o adm_approx.o dam_approx.o print_coef.o hydro.o
+OBJ = main.o adm_approx.o dam_approx.o print_coef.o hydro.o in_out_files.o
 
 all:     calhyd
 
@@ -20,6 +20,7 @@ adm_approx.o: adm_approx.c func.h
 dam_approx.o: dam_approx.c func.h
 print_coef.o: print_coef.c func.h
 hydro.o: hydro.c func.h
+in_out_files.o: in_out_files.c func.h
 
 clean:
 	rm -rf *.o
