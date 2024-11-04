@@ -12,7 +12,7 @@ OBJ = main.o adm_approx.o dam_approx.o print_coef.o hydro.o
 all:     calhyd
 
 calhyd: $(OBJ)
-	$(CC) $(CFLAGS) -o calhyd $(OBJ)
+	$(CC) $(CFLAGS) -o calhyd $(OBJ) -lm
 
 main.o:  main.c func.h
 

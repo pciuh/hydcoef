@@ -4,13 +4,15 @@
 
 #include "func.h"
 
-#define NFRA 99   // maximum number of hull sections
-#define NFREQ 101  // number of frequencies
+// #define NFRA 99   // maximum number of hull sections
+// #define NFREQ 101  // number of frequencies
 
 int main (int argc, char *argv[])
 {
+    const int NoHullSections = 99;
+    const int NoWaveFrequencies = 101;
     int i,c;
-    float x[NFRA], R[NFRA];
+    float x[NoHullSections], R[NoHullSections];
     float L,wMin,wMax;
     char str[66];
     
@@ -37,7 +39,7 @@ int main (int argc, char *argv[])
     fclose(infile);
     int n = i-1;
 
-    if (n>NFRA) {
+    if (n>NoHullSections) {
         printf("Too many sections! Limit is 99\n");
         exit(8);
     }
@@ -77,8 +79,8 @@ int main (int argc, char *argv[])
 
 
     //calculate wave frequencies    
-    float w[NFREQ];       
-    float dw = (wMax-wMin)/(NFREQ-1);
+    float w[NoWaveFrequencies];       
+    float dw = (wMax-wMin)/(NoWaveFrequencies-1);
     
     float ww = wMin;
     for(i=0;ww<wMax;i++){
@@ -111,7 +113,7 @@ int main (int argc, char *argv[])
 
     outfile = fopen(ofnm,"w");
     fprintf(outfile,"%s,%s,%s,%s,%s\n","OMEGA","A33","A55","B33","B55");
-    for(i=0;i<NFREQ;i++){
+    for(i=0;i<NoWaveFrequencies;i++){
         fprintf(outfile,"%f,%f,%f,%f,%f\n",w[i],rad.A33x[i]/hyd.W,rad.A55x[i]/hyd.I55,rad.B33x[i]/hyd.W,rad.B55x[i]/hyd.I55);
     }
     fclose(outfile);
