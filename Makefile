@@ -5,7 +5,7 @@
 #      dAnzig, 2024/11/02
 CC=gcc
 
-CFLAGS=-g1 -Wall -ggdb
+CFLAGS=-g1 -Wall -ggdb -std=c99
 
 OBJ = main.o adm_approx.o dam_approx.o print_coef.o hydro.o in_out_files.o
 
