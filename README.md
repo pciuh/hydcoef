@@ -68,6 +68,9 @@ Below is a list of commands available in the Makefile:
   - `main.c`
   - `adm_approx.c`
   - `dam_approx.c`
+  - `hydro.c`
+  - `in_out_files.c`
+  - `print_coef.c`
 - **Header File**:
   - `func.h`
 
@@ -76,6 +79,9 @@ The object files generated during compilation are:
 - `main.o`
 - `adm_approx.o`
 - `dam_approx.o`
+- `hydro.o`
+- `in_out_files.o`
+- `print_coef.o`
 
 ## Project Structure
 
@@ -83,8 +89,11 @@ The object files generated during compilation are:
 calhyd/
 ├── hull              # Directory containing hull files and results
 ├── main.c            # Main source file
-├── adm_approx.c      # Source file for adm_approx calculations
-├── dam_approx.c      # Source file for dam_approx calculations
+├── adm_approx.c      # Source file for added mass calculations
+├── dam_approx.c      # Source file for damping calculations
+├── hydro.c           # Source file for hydrostatic calculations
+├── in_out_file.c      # Source file for input/output flies operations
+├── print_coef.c      # Source file for printing some results to screen
 └── func.h            # Header file containing function declarations
 ```
 
