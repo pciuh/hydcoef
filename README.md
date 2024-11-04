@@ -118,7 +118,7 @@ This project is licensed under the MIT License. See the [LICENSE](https://github
 
 ## References <a id="reference"></a>
 
-<a id="1">[1]</a> Faltinsen, O., Sea Loads on Ships and Offshore Structures
+<a id="1">[1]</a> Faltinsen, O.M. (1990) Sea Loads on Ships and Offshore Structures. Cambridge University Press, 1-5.
 ```bibtex
 @book{faltinsen1993sea,
   title={Sea Loads on Ships and Offshore Structures},
