@@ -22,8 +22,8 @@ struct Hcoef {
 };
 
 struct Sections {
-   float x[99];
-   float R[99];
+   float x[256];
+   float R[256];
    int n;
 };
 

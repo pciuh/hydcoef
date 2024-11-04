@@ -40,10 +40,12 @@ struct Hydro Hydrostatic(int n, float L, float x[], float R[]){
     float CB = A/L/2/pow(Rmax,2); // block coefficient
 
     // print hydrostatics to screen
-    printf("\n LCB [m]:%12.3f\n",LCB);
-    printf("VOL [m3]:%12.1f\n",A);
-    printf("MASS [t]:%12.1f\n",W*1e-3);
-    printf("  CB [-]:%12.3f\n",CB);
+    printf("\n");
+    printf("      LCB [m]:%12.3f\n",LCB);
+    printf("     VOL [m3]:%12.1f\n",A);
+    printf("     MASS [t]:%12.1f\n",W*1e-3);
+    printf("INERTIA [tm2]:%12.3e\n",I55*1e-3);
+    printf("       CB [-]:%12.3f\n",CB);
 
 
     struct Hydro r = {A, LCB, W, I55, CB};

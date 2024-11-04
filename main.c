@@ -2,7 +2,7 @@
 
 int main (int argc, char *argv[])
 {
-    const int NoHullSections = 99;
+    const int NoHullSections = 256;
     const int NoWaveFrequencies = 101;
 
     if(argc<3){

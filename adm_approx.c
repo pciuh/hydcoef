@@ -8,14 +8,25 @@
 
 #include "func.h"
 
+/*
+float afun(float x) {
+    // approximation for 2D added mass A33(2D) of half circle acc. to [1]
+    // function returns value A33(2D)/rho A, where A = 1/2 pi R^2
+    // -0.60780004  0.31969449 -0.59697274
+    const float p = -0.60780004;
+    const float q =  0.31969449;
+    const float r = -0.59697274;
+    return q*exp(-p*x)*pow(x,r);
+}
+*/
 
 float afun(float x) {
     // approximation for 2D added mass A33(2D) of half circle acc. to [1]
     // function returns value A33(2D)/rho A, where A = 1/2 pi R^2
-    const float p = -0.60779994;
-    const float q =  0.31969453;
-    const float r =  0.59697270;
-    return q*exp(-p*x)/pow(x,r);
+    const float p = 0.23418837;
+    const float q = 0.35687181;
+    const float r = 0.56903485;
+    return p*x+q/pow(x,r);
 }
 
 float acal(float w, float R) {  
