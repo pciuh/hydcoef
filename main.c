@@ -10,7 +10,6 @@ int main (int argc, char *argv[])
         exit(8);
     }
     printf("\nOpening hull file: %s\n",argv[1]);
-    
     struct Sections sec = ReadHullFile(argv[1],NrHullSections);
     struct Config   cnf = ReadConfFile(argv[2]);
     struct Hydro    hyd = Hydrostatic(sec.n,cnf.L,sec.x,sec.R);
