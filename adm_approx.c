@@ -11,9 +11,10 @@
 float afun(float x) {
     // approximation for 2D added mass A33(2D) of half circle acc. to [1]
     // function returns value A33(2D)/rho A, where A = 1/2 pi R^2
-    const float p = 0.23418837;
-    const float q = 0.35687181;
-    const float r = 0.56903485;
+    // 0.234, 0.357, 0.56
+    const float p = 0.234;
+    const float q = 0.357;
+    const float r = 0.569;
     return p*x+q/pow(x,r);
 }
 

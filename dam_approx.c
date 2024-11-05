@@ -12,9 +12,10 @@
 float bfun(float x) {
     // approximation for 2D damping coefficient B33(2D) of half circle acc. to [1]
     // function returns value B33(2D)/rho w A, where A = 1/2 pi R^2, w is wave frequency [rad/s]
-    const float p = 1.85300997;
-    const float q = 2.31912227;
-    const float r = 0.76217309;
+    // 1.853009982688, 2.319122286921, 0.762173086053
+    const float p = 1.853;
+    const float q = 2.319;
+    const float r = 0.762;
     return q*exp(-p*pow(x,r));
 }
 
