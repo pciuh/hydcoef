@@ -11,7 +11,11 @@
 #include <math.h>
 
 struct Hydro {
-    float A,LCB, W, I55, CB;
+    float A;
+    float LCB;
+    float W;
+    float I55;
+    float CB;
 };
 
 struct Hcoef {
