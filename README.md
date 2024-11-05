@@ -42,10 +42,10 @@ make all
 
 This will generate an executable named `calhyd`. Further to calculate added mass and damping coefficients you need to create comma separated `hull.csv` including sectional ordinate `x` and section radius `R`. All these must be dimesionless with respect to ship length `L`.
 
-Next the `conf.csv` file including ship length `L` and min/max value of wave frequency `wMin`, `wMax` are demanded. For preparation of `csv` files look into example `hull/hull.csv` and `conf.csv`. Then run program from command line:
+Next the `conf.csv` file including ship length `L` and min/max value of wave frequency `wMin`, `wMax` are demanded. For preparation of `csv` files look into example `hull/hull.csv` and `conf/conf.csv`. Then run program from command line:
 
 ```bash
-./calhyd hull/hull.csv conf.csv
+./calhyd hull/hull.csv conf/conf.csv
 ```
 
 Added mass and damping coefficients are normalized by calculated ship displacement and pitch moment of inertia. Rsults are stored into the `hull/` folder. Name of results file are e.g.: `hull-hc.csv`.
